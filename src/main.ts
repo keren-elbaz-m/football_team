@@ -1,6 +1,11 @@
 const buttons = document.querySelectorAll<HTMLButtonElement>(".tabs button");
 const container = document.getElementById("teams-container");
 
+type Team = {
+    strBadge :string;
+    strTeam :string;
+}
+
 buttons.forEach((button) => {
   button.addEventListener("click", async () => {
     const league = button.dataset.league;
@@ -11,12 +16,12 @@ buttons.forEach((button) => {
     try {
       const url = `https://www.thesportsdb.com/api/v1/json/3/search_all_teams.php?l=${encodeURIComponent(league)}`;
       const response = await fetch(url);
-      const data = await response.json();
+      const data : { teams: Team[] | null } = await response.json();
 
       if (data.teams && data.teams.length > 0) {
         container.innerHTML = data.teams
           .map(
-            (team: any) => `
+            (team : Team) => `
               <div class="team">
                 <img src="${team.strBadge}" alt="${team.strTeam}" width="50" />
                 <span>${team.strTeam}</span>
