@@ -1,5 +1,5 @@
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: sans-serif;
   background-color: #f7f7f7;
   margin: 0;
   padding: 20px;
@@ -8,9 +8,9 @@ body {
 .tabs {
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid #b412dd;
+  border-bottom: 1px solid #ccc;
   gap: 2rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: sans-serif;
 }
 .tabs .tab {
   background: none;
