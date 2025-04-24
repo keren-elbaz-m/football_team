@@ -5,6 +5,15 @@ $color-accent: #0056b3;
 $color-border: #ccc;
 $shadow-card: 0 2px 4px rgba(0, 0, 0, 0.1);
 
+@mixin card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: $shadow-card;
+  }
+
+  
 body {
     font-family: $font-main;
     background-color: #f7f7f7;
@@ -15,28 +24,29 @@ body {
   .tabs {
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid $color-border;
     gap: 2rem;
     font-family: $font-main;
   
+  
     .tab {
-      background: none;
-      border: none;
-      font-size: 1rem;
-      padding: 1rem 0;
-      cursor: pointer;
-      color: #333;
-      border-bottom: 3px solid transparent;
-      transition: all 0.3s ease;
-      font-weight: 500;
+        background: none;
+        border: none;
+        font-size: 1rem;
+        padding: 1rem 0;
+        cursor: pointer;
+        color: $color-text;
+        border-bottom: 3px solid transparent;
+        transition: all 0.3s ease;
+        font-weight: 500;
   
       &:hover {
-        color: #0056b3;
+        color: $color-accent;
       }
   
       &.active {
-        color: #0056b3;
-        border-bottom: 3px solid #0056b3;
+        color: $color-accent;
+        border-bottom: 3px solid $color-accent;
         font-weight: bold;
       }
     }
@@ -49,11 +59,7 @@ body {
     padding: 10px;
   
     .team {
-      background-color: #fff;
-      border-radius: 8px;
-      padding: 10px;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      @include card;
   
       img {
         width: 50px;
