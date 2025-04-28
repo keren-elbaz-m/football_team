@@ -1,1 +1,3 @@
 test_to_ignore.txt
+node_modules
+dist
